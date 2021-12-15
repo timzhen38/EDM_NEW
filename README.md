@@ -26,3 +26,4 @@ Navigate [here](https://github.com/bto2442/Exoplanet-Website) for the website
 # Notes
 - Not recommended to run more than one model at the same time because you may run into memory issues
 - Please wait until results show on the website before clicking calculate again
+
