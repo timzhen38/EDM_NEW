@@ -15,9 +15,9 @@ pip install -r requirements.txt
 
 # Server:
 Navigate to the server folder in terminal and run
-'''
+```
 python server.py
-'''
+```
 to set up the server
 
 
