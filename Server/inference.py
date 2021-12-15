@@ -131,5 +131,5 @@ def predict(target_name, training_data, processing, models):
     if training_data == "kepler" and processing == "lightkurve":
             inputLC_kepler_lightkurve = inputlightcurve.downloadLC_kepler(target_name)
             return getPredictions(inputLC_kepler_lightkurve, models, "../Kepler/Regular")    
-    
+    print('predict')
     return {"error"}

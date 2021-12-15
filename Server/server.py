@@ -29,6 +29,7 @@ def data():
     "lightcurve" : inputlightcurve.getLCimg(input),
     "results" : inference.predict(input, training_data, processing, models)
     }
+    print('jsonify')
     return dict_data
 '''
 @app.route('/get_image')
