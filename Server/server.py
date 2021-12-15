@@ -29,7 +29,6 @@ def data():
     "lightcurve" : inputlightcurve.getLCimg(input),
     "results" : inference.predict(input, training_data, processing, models)
     }
-    print('jsonify')
     return dict_data
 '''
 @app.route('/get_image')
@@ -61,4 +60,4 @@ RETURN:
         Lower than 50% = No
 '''
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8001, debug=False)
