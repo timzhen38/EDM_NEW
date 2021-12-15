@@ -3,6 +3,7 @@ import base64
 from PIL import Image
 import io
 import inputlightcurve
+import json
 import inference
 app = Flask(__name__)
 '''
@@ -27,7 +28,7 @@ def data():
     dict_data = {
     "targetpixelfile" : inputlightcurve.getTPFimg(input),
     "lightcurve" : inputlightcurve.getLCimg(input),
-    "results" : json.load(inference.predict(input, training_data, processing, models))
+    "results" : inference.predict(input, training_data, processing, models)
     }
     return dict_data
 '''
