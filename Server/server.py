@@ -5,7 +5,9 @@ import io
 import inputlightcurve
 import json
 import inference
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 '''
 json would look like
 selection = {

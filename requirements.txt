@@ -4,5 +4,7 @@ lightkurve
 matplotlib
 numpy
 pandas
-tensorflow
-tsfresh
+tensorflow==2.6.2
+tsfresh==0.18.0
+statsmodels==0.12.1
+flask-cors
