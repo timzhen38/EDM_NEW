@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5713d89b020cca747395e4c656e963107300b261de0bbb9428e790ae418258a1
-size 280
+epoch,accuracy,auc,false_negatives,false_positives,loss,precision,recall,true_negatives,true_positives,val_accuracy,val_auc,val_false_negatives,val_false_positives,val_loss,val_precision,val_recall,val_true_negatives,val_true_positives
+0,0.6937131285667419,0.4486103355884552,1933.0,766.0,0.6779540181159973,0.0859188511967659,0.0359102226793766,6041.0,72.0,0.7667461037635803,0.42452797293663025,881.0,0.0,0.6583487391471863,0.0,0.0,2896.0,0.0

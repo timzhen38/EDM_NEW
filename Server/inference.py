@@ -111,7 +111,7 @@ def getPredictions(inputLC, models, path):
         probability = rf.predict(inputLC)
         predictions["RF"] = {"Probability" : str(np.max(probability)), "Classification" : tobool(probability, path)}
     
-    return json.dumps(predictions)
+    return predictions
              
 def predict(target_name, training_data, processing, models):
     
@@ -132,4 +132,4 @@ def predict(target_name, training_data, processing, models):
     if training_data == "kepler" and processing == "lightkurve":
             inputLC_kepler_lightkurve = inputlightcurve.downloadLC_kepler(target_name)
             return getPredictions(inputLC_kepler_lightkurve, models, "../Kepler/Regular")    
-    return json.dumps({"error"})
+    return {"error"}
