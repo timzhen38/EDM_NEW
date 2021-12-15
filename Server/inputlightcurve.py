@@ -52,7 +52,6 @@ def getTPFimg(target):
     tmpfile = BytesIO()
     plt.savefig(tmpfile, format='png')
     encoded = base64.b64encode(tmpfile.getvalue())
-    print('tpfimg')
     return str(encoded)
 
 def getLCimg(target):
@@ -62,6 +61,5 @@ def getLCimg(target):
     tmpfile = BytesIO()
     plt.savefig(tmpfile, format='png')
     encoded = base64.b64encode(tmpfile.getvalue())
-    print('lcimg')
     return str(encoded)
     

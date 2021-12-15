@@ -75,20 +75,17 @@ def getPredictions(inputLC, models, path):
     if "rnn" in models:
         reconstructed_model = keras.models.load_model(path + "/keras-models/KerasRNN")
         probability = reconstructed_model.predict(inputLC_keras)
-        #predictions["RNN"] = {"Probability" : probability, "Classification" : tobool(probability, path)}
-        predictions["RNN"] = {"Classification" : tobool(probability, path)}
+        predictions["RNN"] = {"Probability" : probability, "Classification" : tobool(probability, path)}
 
     if "lstm" in models:
         reconstructed_model = keras.models.load_model(path + "/keras-models/KerasLSTM")
         probability = reconstructed_model.predict(inputLC_keras)
-        #predictions["LSTM"] = {"Probability" : probability, "Classification" : tobool(probability, path)}
-        predictions["LSTM"] = {"Classification" : tobool(probability, path)}
+        predictions["LSTM"] = {"Probability" : probability, "Classification" : tobool(probability, path)}
             
     if "gru" in models:
         reconstructed_model = keras.models.load_model(path + "/keras-models/KerasGRU")
         probability = reconstructed_model.predict(inputLC_keras)
-        #predictions["GRU"] = {"Probability" : probability, "Classification" : tobool(probability, path)}
-        predictions["GRU"] = {"Classification" : tobool(probability, path)}
+        predictions["GRU"] = {"Probability" : probability, "Classification" : tobool(probability, path)}
 
     #Logistic Regression
     if "lr" in models:
@@ -98,8 +95,7 @@ def getPredictions(inputLC, models, path):
         predicted_y = W * inputLC + b
         predicted_y = logistic_layer(predicted_y)
         probability = np.max(predicted_y)
-        #predictions["LR"] = {"Probability" : probability, "Classification" : tobool(np.array(predicted_y), path)}
-        predictions["LR"] = {"Classification" : tobool(np.array(predicted_y), path)}
+        predictions["LR"] = {"Probability" : probability, "Classification" : tobool(np.array(predicted_y), path)}
 
             
     #Decision Tree & Random Forest
@@ -107,14 +103,12 @@ def getPredictions(inputLC, models, path):
         with open(path + "/tf-models/decision-tree.pkl", 'rb') as f:
             dt = pickle.load(f)
         probability = dt.predict(inputLC)
-        #predictions["DT"] = {"Probability" : probability, "Classification" : tobool(probability, path)}
-        predictions["DT"] = {"Classification" : tobool(probability, path)}
+        predictions["DT"] = {"Probability" : probability, "Classification" : tobool(probability, path)}
 
         with open(path + "/tf-models/random-forest.pkl", 'rb') as f:
             rf = pickle.load(f)
         probability = rf.predict(inputLC)
-        #predictions["RF"] = {"Probability" : probability, "Classification" : tobool(probability, path)}
-        predictions["RF"] = {"Classification" : tobool(probability, path)}
+        predictions["RF"] = {"Probability" : probability, "Classification" : tobool(probability, path)}
     
     return predictions
              
