@@ -103,12 +103,12 @@ def getPredictions(inputLC, models, path):
     if "rf" in models:
         with open(path + "/tf-models/decision-tree.pkl", 'rb') as f:
             dt = pickle.load(f)
-        probability = dt.predict(inputLC)
+        probability = dt.predict_proba(inputLC)
         predictions["DT"] = {"Probability" : str(np.max(probability)), "Classification" : tobool(probability, path)}
 
         with open(path + "/tf-models/random-forest.pkl", 'rb') as f:
             rf = pickle.load(f)
-        probability = rf.predict(inputLC)
+        probability = rf.predict_proba(inputLC)
         predictions["RF"] = {"Probability" : str(np.max(probability)), "Classification" : tobool(probability, path)}
     
     return predictions
