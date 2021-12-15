@@ -26,8 +26,8 @@ def data():
     #function that takes input, training, processing and models and returns the results object
     dict_data = {
     "targetpixelfile" : inputlightcurve.getTPFimg(input),
-    "lightcurve" : inputlightcurve.getLCimg(input),
-    "results" : inference.predict(input, training_data, processing, models)
+    "lightcurve" : inputlightcurve.getLCimg(input)
+    #"results" : inference.predict(input, training_data, processing, models)
     }
     print('jsonify')
     return dict_data
