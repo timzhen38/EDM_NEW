@@ -27,7 +27,7 @@ def data():
     dict_data = {
     "targetpixelfile" : inputlightcurve.getTPFimg(input),
     "lightcurve" : inputlightcurve.getLCimg(input),
-    "results" : inference.predict(input, training_data, processing, models)
+    "results" : json.load(inference.predict(input, training_data, processing, models))
     }
     return dict_data
 '''
